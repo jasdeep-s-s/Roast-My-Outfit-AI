@@ -16,12 +16,16 @@
         </strong>
       </h1>
       <p class="leading-10 text-xl font-serif text-justify">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
-        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
-        exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute 
-        irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla 
-        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia 
-        deserunt mollit anim id est laborum.
+        Think you’re serving looks? Or just serving... trauma?
+        <br>
+        Welcome to <i>Roast My Outfit AI Web Assisstant</i>, internet's most savage dressing room!
+        Drop a pic or describe your fit — and our savage AI will flame it like it’s 2012 Tumblr🔥
+        <br>
+        <br>
+        No filters. No mercy. No cap. Just brutally honest and hilarious drip checks!
+        <br>
+        <br>
+        Please Scroll Down to get started with "Roast AI."
       </p>
     </div>
 
@@ -107,6 +111,26 @@
           aiResponse.value = "Oops! Something went wrong analyzing the image: " + (error.message || JSON.stringify(error));
         }
       }
+
+      // Function for reading a file and converting it to base64
+      async function getImageBase64(file) {
+        const reader = new FileReader();
+
+        return new Promise((resolve, reject) => {
+          reader.onloadend = () => {
+            // Extracts only the base64 part and removing the initial part
+            const base64String = reader.result.split(',')[1];
+            resolve(base64String);
+            aiResponse.value = "Image Resolved!";
+          };
+
+          reader.onerror = reject;
+
+          // Starts reading the file as a data URL
+          reader.readAsDataURL(file);
+        });
+      }
+
       
       // Common function to decide which input to send
       async function handleSubmit(event) {
@@ -134,9 +158,35 @@
           aiResponse.value = "Uploading Image...";
       
           try {
-            const uploaded = await puter.fs.upload(file);
-            const imageUrl = uploaded.url;
-            await sendImagePrompt(imageUrl);
+            //const uploaded = await puter.fs.upload(file);
+            const base64Image = await getImageBase64(file);
+            aiResponse.value = "Image converted to Base64 and retreived successfully!\n                                  Please wait for response.";
+            //aiResponse.value = ("Base64: ", base64Image);
+            const prompt = "Analyze the outfit shown in this image and roast it brutally with honesty and humor (in not more than 180 words)! Give a general response even if you cannot see the image(s)";
+            const response = await puter.ai.chat(prompt, 
+            {model: "gpt-4o"},
+              {messages: [ 
+                {
+                  role: "user",
+                  content: [
+                    {
+                      type: "text",
+                      text: "Analyze this following image:"
+                    },
+                    {
+                      type: "image",
+                      image: {
+                        type: "image/jpeg",
+                        data: base64Image
+                      }
+                    }
+                  ]
+                }
+              ]}
+            );
+
+            aiResponse.value = response.message.content;
+            console.log = ("Image Response: ", response.message.content);
           }
           catch (error) {
             console.error("Image upload error:", error);
