@@ -25,7 +25,7 @@ Welcome to the **Roast My Outfit AI** - a fun and savage AI-powered website wher
 - Beautiful and chic Tailwind CSS styled UI
 - Fully deployed and accessible globally
 
-🤝 Contributions & Development
+## 🤝 Contributions & Development
 
 Pull requests are most welcome! The website UI and API will keep getting better as the knowledge of the developer increases (he is still learning).
 
