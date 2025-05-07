@@ -1,12 +1,39 @@
-# React + Vite
+# Roast My Outfit AI🔥
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to the **Roast My Outfit AI** - a fun and savage AI-powered website where 
 
-Currently, two official plugins are available:
+>**Built using modern web technologies and deployed for free.**
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Live Demo 👘 
+🔗[Click here to visit the website!](https://roast-my-outfit.vercel.app/)
 
-## Expanding the ESLint configuration
+## Technologies and Tools Used 🛠️ 
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **React** (Frontend JS framework)
+- **Vite** (fast build tool & local dev server)
+- **Tailwind CSS** (Utility-first CSS framework for styling)
+- **Puter.js** (frontend OpenAI API integration)
+- **GPT-4o** (Latest OpenAI model for image analysis)
+- **Git** (Version Terminal Control)
+- **Vercel** (Free deployment and hosting)
+
+## Features 📦
+
+- Describe your Outfit via text and get roasted
+- Upload an Image of your Outift and let imagine roasting based on it
+- Beautiful and chic Tailwind CSS styled UI
+- Fully deployed and accessible globally
+
+🤝 Contributions & Development
+
+Pull requests are most welcome! The website UI and API will keep getting better as the knowledge of the developer increases (he is still learning).
+
+## 📜 License
+
+Distributed under the MIT License. See `LICENSE` for more information.
+
+🙌🏼 Acknowledgements
+"*" Huge thanks to Puter.com for providing free access to GPT-4o APIs!
+"*" Inspiration from ChatGPT's smooth typing and UI design
+"*" Built with 💖 by Jasdeep...
