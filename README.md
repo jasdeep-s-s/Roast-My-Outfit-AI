@@ -33,7 +33,7 @@ Pull requests are most welcome! The website UI and API will keep getting better 
 
 Distributed under the MIT License. See `LICENSE` for more information.
 
-🙌🏼 Acknowledgements
+## 🙌🏼 Acknowledgements
 "*" Huge thanks to Puter.com for providing free access to GPT-4o APIs!
 "*" Inspiration from ChatGPT's smooth typing and UI design
 "*" Built with 💖 by Jasdeep...
