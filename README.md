@@ -21,7 +21,7 @@ Welcome to the **Roast My Outfit AI** - a fun and savage AI-powered website wher
 ## Features 📦
 
 - Describe your Outfit via text and get roasted
-- Upload an Image of your Outift and let imagine roasting based on it
+- Upload an Image of your Outift and let the AI roast it  
 - Beautiful and chic Tailwind CSS styled UI
 - Fully deployed and accessible globally
 
